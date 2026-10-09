@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ford Mustang Shelby GT500 | 3D Interactive Showcase</title>
+    <meta name="description" content="Showcase 3D interaktif Ford Mustang Shelby GT500 menggunakan Three.js dan WebGL. Rasakan sensasi supercar legendaris dengan mesin 760 HP Predator V8." />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,800;1,900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <!-- Top Navigation Bar -->
+    <header class="navbar">
+      <div class="nav-container">
+        <a href="#hero" class="brand-logo">
+          <div class="cobra-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2C8 2 5 4.5 5 8c0 2.5 1.5 4.2 3.5 5.5C6.5 15 5 17 5 19.5 5 21 6.5 22 12 22s7-1 7-2.5c0-2.5-1.5-4.5-3.5-6C17.5 12.2 19 10.5 19 8c0-3.5-3-6-7-6z" fill="#e61919" stroke="#ff2a2a" />
+              <circle cx="9.5" cy="7.5" r="1" fill="#fff" />
+              <circle cx="14.5" cy="7.5" r="1" fill="#fff" />
+              <path d="M12 11v3m-2-1.5h4" stroke="#fff" stroke-width="1.5" />
+            </svg>
+          </div>
+          <div class="brand-text">
+            <span class="brand-title">SHELBY<span class="text-accent">GT500</span></span>
+            <span class="brand-sub">FORD PERFORMANCE</span>
+          </div>
+        </a>
+
+        <nav class="nav-links">
+          <a href="#hero" class="nav-link active">Home</a>
+          <a href="#showroom" class="nav-link">3D Showcase</a>
+          <a href="#performance" class="nav-link">Performa</a>
+          <a href="#specs" class="nav-link">Spesifikasi</a>
+          <a href="#aerodynamics" class="nav-link">Aerodinamika</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button id="btn-engine-sound" class="btn-sound" title="Dengarkan Suara Mesin V8" aria-label="Toggle Sound">
+            <svg class="sound-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+            </svg>
+            <span class="sound-label">REV ENGINE</span>
+          </button>
+          <a href="#showroom" class="btn-primary nav-cta">EXPLORE 3D</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="hero-bg-glow"></div>
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span>THE APEX PREDATOR OF AMERICAN MUSCLE</span>
+        </div>
+        
+        <h1 class="hero-title">
+          BORN TO<br />
+          <span class="title-highlight">DOMINATE</span>
+        </h1>
+        
+        <p class="hero-subtitle">
+          2020 FORD MUSTANG SHELBY® GT500® — Mahakarya rekayasa Ford Performance dengan mesin 5.2L Supercharged V8 "Predator". Menghasilkan 760 tenaga kuda murni di jalan raya dan sirkuit.
+        </p>
+
+        <!-- Key Metrics Cards -->
+        <div class="hero-stats">
+          <div class="stat-card">
+            <div class="stat-value">760 <span class="stat-unit">HP</span></div>
+            <div class="stat-label">Horsepower @ 7,300 RPM</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-card">
+            <div class="stat-value">625 <span class="stat-unit">LB-FT</span></div>
+            <div class="stat-label">Torque Supercharged</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-card">
+            <div class="stat-value">3.3 <span class="stat-unit">DETIK</span></div>
+            <div class="stat-label">0 - 60 MPH Akselerasi</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-card">
+            <div class="stat-value">&lt; 80 <span class="stat-unit">MS</span></div>
+            <div class="stat-label">TREMEC® 7-Speed DCT</div>
+          </div>
+        </div>
+
+        <div class="hero-cta-group">
+          <a href="#showroom" class="btn-primary">
+            <span>MASUKI 3D SHOWROOM</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#specs" class="btn-secondary">
+            <span>LIHAT SPESIFIKASI</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-scroll-indicator">
+        <span class="scroll-text">SCROLL KE 3D SHOWROOM</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <!-- 3D Interactive Showroom Section -->
+    <section id="showroom" class="showroom-section">
+      <div class="showroom-header">
+        <div class="section-tag">INTERACTIVE EXPERIENCE</div>
+        <h2 class="section-title">3D VIRTUAL SHOWROOM</h2>
+        <p class="section-desc">
+          Putar, perbesar, dan eksplorasi setiap lekuk bodi aerodinamis Shelby GT500 secara 360 derajat secara real-time.
+        </p>
+      </div>
+
+      <!-- 3D Viewport Container -->
+      <div class="viewport-wrapper">
+        <div id="webgl-container" class="webgl-container">
+          <!-- Three.js Canvas will be inserted here -->
+        </div>
+
+        <!-- Loading Screen Overlay -->
+        <div id="loader-overlay" class="loader-overlay">
+          <div class="loader-card">
+            <div class="loader-emblem">
+              <div class="emblem-ring"></div>
+              <div class="emblem-ring ring-outer"></div>
+              <svg class="emblem-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2C8 2 5 4.5 5 8c0 2.5 1.5 4.2 3.5 5.5C6.5 15 5 17 5 19.5 5 21 6.5 22 12 22s7-1 7-2.5c0-2.5-1.5-4.5-3.5-6C17.5 12.2 19 10.5 19 8c0-3.5-3-6-7-6z" fill="#e61919" stroke="#ff2a2a" />
+                <circle cx="9.5" cy="7.5" r="1.2" fill="#fff" />
+                <circle cx="14.5" cy="7.5" r="1.2" fill="#fff" />
+              </svg>
+            </div>
+            <div class="loader-title">MEMUAT MODEL 3D SHELBY GT500</div>
+            <div class="loader-status" id="loader-status">Mengunduh file GLB (21.5 MB)...</div>
+            
+            <div class="progress-bar-container">
+              <div class="progress-bar-fill" id="progress-bar-fill"></div>
+            </div>
+            <div class="progress-percentage" id="loader-percentage">0%</div>
+
+            <div class="loader-tip">Tips: Gunakan klik kiri untuk memutar dan scroll mouse untuk memperbesar tampilan.</div>
+          </div>
+        </div>
+
+        <!-- Error Screen Overlay -->
+        <div id="error-overlay" class="error-overlay hidden">
+          <div class="error-card">
+            <div class="error-icon">⚠️</div>
+            <h3 class="error-title">Gagal Memuat Model 3D</h3>
+            <p id="error-message" class="error-message">Terjadi kesalahan saat memuat berkas ford_mustang_shelby_gt500.glb.</p>
+            <button id="btn-retry" class="btn-primary">COBA LAGI</button>
+          </div>
+        </div>
+
+        <!-- Interactive HUD Controls -->
+        <div class="hud-top-bar">
+          <div class="hud-badge">
+            <span class="hud-live-dot"></span>
+            <span>THREE.JS ENGINE ACTIVE</span>
+          </div>
+
+          <!-- Color Customizer -->
+          <div class="hud-color-picker">
+            <span class="color-label">WARNA BODI:</span>
+            <div class="color-swatches">
+              <button class="color-btn active" data-color="#c8102e" title="Rapid Red Metallic" style="--c: #c8102e;"></button>
+              <button class="color-btn" data-color="#0f1115" title="Shadow Black" style="--c: #0f1115;"></button>
+              <button class="color-btn" data-color="#f0f2f5" title="Oxford White" style="--c: #f0f2f5;"></button>
+              <button class="color-btn" data-color="#0a4ebb" title="Ford Performance Blue" style="--c: #0a4ebb;"></button>
+              <button class="color-btn" data-color="#e65100" title="Twister Orange" style="--c: #e65100;"></button>
+              <button class="color-btn" data-color="#2e7d32" title="Grabber Lime Green" style="--c: #2e7d32;"></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Camera Presets Bar -->
+        <div class="hud-presets-bar">
+          <button class="preset-btn active" data-preset="hero" id="btn-preset-hero">3/4 PERSPEKTIF</button>
+          <button class="preset-btn" data-preset="front" id="btn-preset-front">DEPAN</button>
+          <button class="preset-btn" data-preset="side" id="btn-preset-side">SAMPING</button>
+          <button class="preset-btn" data-preset="rear" id="btn-preset-rear">BELAKANG</button>
+          <button class="preset-btn" data-preset="top" id="btn-preset-top">AERO ATAS</button>
+        </div>
+
+        <!-- Bottom Control Actions Bar -->
+        <div class="hud-bottom-bar">
+          <div class="hud-control-group">
+            <!-- Reset View Button -->
+            <button id="btn-reset-view" class="hud-btn" title="Kembalikan sudut pandang kamera awal">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                <path d="M3 3v5h5" />
+              </svg>
+              <span>RESET VIEW</span>
+            </button>
+
+            <!-- Auto Rotate Toggle Button -->
+            <button id="btn-autorotate" class="hud-btn active" title="Nyalakan/matikan rotasi otomatis">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+              </svg>
+              <span>ROTASI OTOMATIS: <b class="status-text">ON</b></span>
+            </button>
+
+            <!-- Headlights Toggle Button -->
+            <button id="btn-headlights" class="hud-btn" title="Nyalakan/matikan lampu sorot depan">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+              </svg>
+              <span>LAMPU: <b class="light-status-text">OFF</b></span>
+            </button>
+          </div>
+
+          <div class="hud-instruction">
+            <span class="instruction-icon">🖱️</span>
+            <span>Drag untuk memutar • Scroll untuk zoom • Klik kanan untuk menggeser</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Performance Highlights Section -->
+    <section id="performance" class="section performance-section">
+      <div class="container">
+        <div class="section-tag text-center">TEKNOLOGI BALAP</div>
+        <h2 class="section-title text-center">DIRANCANG UNTUK KEUNGGULAN MUTLAK</h2>
+        <p class="section-desc text-center">
+          Shelby GT500 bukan sekadar muscle car garis lurus. Dilengkapi teknologi sirkuit modern untuk mencetak rekor waktu putaran terbaik.
+        </p>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3" />
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+              </svg>
+            </div>
+            <h3 class="feature-title">Mesin "Predator" 5.2L V8</h3>
+            <p class="feature-desc">
+              Supercharger Eaton TVS R2650 2.65-liter inverted menghasilkan tekanan dorong hingga 12 PSI, memuntahkan 760 HP dan 625 lb-ft torsi instan.
+            </p>
+            <div class="feature-badge">Eaton R2650 Root-Type</div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+              </svg>
+            </div>
+            <h3 class="feature-title">Transmisi TREMEC® 7-Speed DCT</h3>
+            <p class="feature-desc">
+              Perpindahan gigi dual-clutch secepat kilat dalam waktu 80 milidetik. Diprogram khusus untuk akselerasi brutal dan kontinuitas torsi tanpa jeda.
+            </p>
+            <div class="feature-badge">&lt; 80ms Shift Speed</div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <circle cx="12" cy="12" r="4" />
+                <line x1="4.93" y1="4.93" x2="9.17" y2="9.17" />
+                <line x1="14.83" y1="14.83" x2="19.07" y2="19.07" />
+                <line x1="14.83" y1="9.17" x2="19.07" y2="4.93" />
+                <line x1="4.93" y1="19.07" x2="9.17" y2="14.83" />
+              </svg>
+            </div>
+            <h3 class="feature-title">Rem Brembo™ Terbesar di Kelasnya</h3>
+            <p class="feature-desc">
+              Rotor depan masif 420mm (16.5 inci) dengan kaliper 6-piston kaku. Menghentikan monster ini dari 100-0 mph dalam hitungan detik dengan resistensi fade sempurna.
+            </p>
+            <div class="feature-badge">420mm 6-Piston Brembo</div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                <line x1="8" y1="21" x2="16" y2="21" />
+                <line x1="12" y1="17" x2="12" y2="21" />
+              </svg>
+            </div>
+            <h3 class="feature-title">Suspensi Adaptif MagneRide®</h3>
+            <p class="feature-desc">
+              Sensor canggih membaca kondisi lintasan 1.000 kali per detik dan mengubah viskositas cairan magnetik secara instan untuk pengendalian presisi.
+            </p>
+            <div class="feature-badge">1,000x / Sec Sampling</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Specifications Section -->
+    <section id="specs" class="section specs-section">
+      <div class="container">
+        <div class="section-tag text-center">LEMBAR SPESIFIKASI TEKNIS</div>
+        <h2 class="section-title text-center">DATA PERFORMA & ARSITEKTUR</h2>
+        <p class="section-desc text-center">
+          Detail spesifikasi pabrikan resmi 2020 Ford Mustang Shelby GT500.
+        </p>
+
+        <div class="specs-table-wrapper">
+          <div class="specs-column">
+            <h3 class="specs-cat-title">
+              <span class="cat-dot"></span>
+              MESIN & SUMBER TENAGA
+            </h3>
+            <div class="spec-row">
+              <span class="spec-key">Tipe Mesin</span>
+              <span class="spec-val">5.2L Supercharged Cross-Plane Crank V8</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Kode Mesin</span>
+              <span class="spec-val">"Predator"</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Tenaga Maksimum</span>
+              <span class="spec-val highlight-val">760 HP @ 7,300 RPM</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Torsi Puncak</span>
+              <span class="spec-val highlight-val">625 lb-ft (847 Nm) @ 5,000 RPM</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Supercharger</span>
+              <span class="spec-val">Eaton TVS R2650 (2.65 Liter)</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Bore & Stroke</span>
+              <span class="spec-val">94.0 mm x 93.0 mm</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Rasio Kompresi</span>
+              <span class="spec-val">9.5:1</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Batas Putaran (Redline)</span>
+              <span class="spec-val">7,500 RPM</span>
+            </div>
+          </div>
+
+          <div class="specs-column">
+            <h3 class="specs-cat-title">
+              <span class="cat-dot"></span>
+              DRIVETRAIN, SASIS & DIMENSI
+            </h3>
+            <div class="spec-row">
+              <span class="spec-key">Transmisi</span>
+              <span class="spec-val">TREMEC® 7-Speed Dual-Clutch (DCT)</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Sistem Penggerak</span>
+              <span class="spec-val">Rear-Wheel Drive (RWD) with Torsen® LSD</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">0 - 60 MPH (0 - 96 km/h)</span>
+              <span class="spec-val highlight-val">3.3 Detik</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">1/4 Mile (Drag Strip)</span>
+              <span class="spec-val highlight-val">10.7 Detik @ 132 MPH</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Kecepatan Maksimum</span>
+              <span class="spec-val">180 MPH (290 km/h - Track Limited)</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Panjang Bodi</span>
+              <span class="spec-val">4,828 mm</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Lebar Bodi</span>
+              <span class="spec-val">2,082 mm (dengan spion)</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Berat Kosong (Curb Weight)</span>
+              <span class="spec-val">1,898 kg (4,183 lbs)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Aerodynamics Section -->
+    <section id="aerodynamics" class="section aero-section">
+      <div class="container">
+        <div class="aero-grid">
+          <div class="aero-info">
+            <div class="section-tag">AERODINAMIKA & SIRKULASI UDARA</div>
+            <h2 class="section-title">DIPATENKAN UNTUK TEKANAN KE BAWAH MAKSIMUM</h2>
+            <p class="section-desc">
+              Setiap ventilasi, spoiler, dan splitter dirancang di terowongan angin Ford Motorsport. Bodi Shelby GT500 menghasilkan downforce hingga 550 lbs pada 180 mph untuk mencengkram aspal dengan presisi luar biasa.
+            </p>
+            <ul class="aero-list">
+              <li>
+                <span class="aero-bullet">01</span>
+                <div>
+                  <strong>Ventilasi Kap Mesin Komposit Mandiri:</strong> Area buangan 31x28 inci mempercepat ekstraksi udara panas dan mengurangi gaya angkat hidung depan.
+                </div>
+              </li>
+              <li>
+                <span class="aero-bullet">02</span>
+                <div>
+                  <strong>Grille Depan Dua Kali Lebih Besar:</strong> Membuka asupan udara hingga 50% lebih luas dibanding Mustang GT untuk mendinginkan 6 radiator terpisah.
+                </div>
+              </li>
+              <li>
+                <span class="aero-bullet">03</span>
+                <div>
+                  <strong>Sayap Belakang Carbon Fiber Track Pack:</strong> Terinspirasi dari mobil balap Mustang GT4, memberikan stabilitas kecepatan tinggi saat pengereman ekstrem.
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="aero-stats-card">
+            <div class="aero-stat-big">
+              <div class="big-number">550 <span class="big-unit">LBS</span></div>
+              <div class="big-label">Downforce Maksimum pada 180 MPH</div>
+            </div>
+            <div class="aero-stat-big">
+              <div class="big-number">50% <span class="big-unit">+</span></div>
+              <div class="big-label">Peningkatan Kapasitas Pendinginan Mesin</div>
+            </div>
+            <div class="aero-stat-big">
+              <div class="big-number">420 <span class="big-unit">MM</span></div>
+              <div class="big-label">Diameter Piringan Rem Depan Brembo™</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Minimalist Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <div class="brand-logo">
+              <div class="cobra-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2C8 2 5 4.5 5 8c0 2.5 1.5 4.2 3.5 5.5C6.5 15 5 17 5 19.5 5 21 6.5 22 12 22s7-1 7-2.5c0-2.5-1.5-4.5-3.5-6C17.5 12.2 19 10.5 19 8c0-3.5-3-6-7-6z" fill="#e61919" stroke="#ff2a2a" />
+                  <circle cx="9.5" cy="7.5" r="1" fill="#fff" />
+                  <circle cx="14.5" cy="7.5" r="1" fill="#fff" />
+                </svg>
+              </div>
+              <span class="brand-title">SHELBY<span class="text-accent">GT500</span></span>
+            </div>
+            <p class="footer-desc">
+              Web 3D Showcase Interaktif dibangun dengan Three.js, Vanilla JavaScript, HTML5, dan CSS Modern.
+            </p>
+          </div>
+
+          <div class="footer-links-group">
+            <div class="footer-col">
+              <h4>Navigasi</h4>
+              <a href="#hero">Beranda</a>
+              <a href="#showroom">3D Showcase</a>
+              <a href="#performance">Performa</a>
+              <a href="#specs">Spesifikasi</a>
+            </div>
+            <div class="footer-col">
+              <h4>Teknologi</h4>
+              <span>Three.js WebGL</span>
+              <span>GLTFLoader</span>
+              <span>OrbitControls</span>
+              <span>Vite Bundler</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 Shelby GT500 3D Showcase. Dibuat untuk Modul Pembelajaran Web 3D.</p>
+          <button id="btn-back-to-top" class="btn-top" title="Kembali ke atas">
+            <span>KEMBALI KE ATAS</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Main Entry Module -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
